@@ -1,6 +1,6 @@
 /*eslint-disable*/
 import { Movie } from '../../types/Movie';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { TextField } from '../TextField';
 
 const pattern = /^((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=+$,\w]+@)?[A-Za-z0-9.-]+|(?:www\.|[-;:&=+$,\w]+@)[A-Za-z0-9.-]+)((?:\/[+~%/.\w-_]*)?\??(?:[-+=&;%@,.\w_]*)#?(?:[,.!/\\\w]*))?)$/;
@@ -70,7 +70,7 @@ const handleSubmit = (event: React.FormEvent) => {
         name="title"
         label="Title"
         value={title}
-        onChange={(newValue) => {setTitle(newValue)}}
+        onChange={setTitle}
         required
       />
 
@@ -78,14 +78,14 @@ const handleSubmit = (event: React.FormEvent) => {
         name="description"
         label="Description"
         value={description}
-        onChange={(newValue) => {setDescription(newValue)}}
+        onChange={setDescription}
       />
 
       <TextField
         name="imgUrl"
         label="Image URL"
         value={imgUrl}
-        onChange={(newValue) => {setImgUrl(newValue)}}
+        onChange={setImgUrl}
         validator={urlValidator}
         required
       />
@@ -94,7 +94,7 @@ const handleSubmit = (event: React.FormEvent) => {
         name="imdbUrl"
         label="Imdb URL"
         value={imdbUrl}
-        onChange={(newValue) => {setImdbUrl(newValue)}}
+        onChange={setImdbUrl}
         validator={urlValidator}
         required
       />
@@ -103,7 +103,7 @@ const handleSubmit = (event: React.FormEvent) => {
         name="imdbId"
         label="Imdb ID"
         value={imdbId}
-        onChange={(newValue) => {setImdbId(newValue)}}
+        onChange={setImdbId}
         required
       />
 
